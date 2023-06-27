@@ -1,49 +1,38 @@
--- phpMyAdmin SQL Dump
--- version 5.0.2
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Waktu pembuatan: 25 Bulan Mei 2023 pada 18.10
--- Versi server: 10.4.14-MariaDB
--- Versi PHP: 7.2.33
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `server_api`
---
-
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Versi server:                 10.4.14-MariaDB - mariadb.org binary distribution
+-- OS Server:                    Win64
+-- HeidiSQL Versi:               12.1.0.6537
 -- --------------------------------------------------------
 
---
--- Struktur dari tabel `tb_staff`
---
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-CREATE TABLE `tb_staff` (
+
+-- Membuang struktur basisdata untuk server_api
+CREATE DATABASE IF NOT EXISTS `server_api` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+USE `server_api`;
+
+-- membuang struktur untuk table server_api.tb_staff
+CREATE TABLE IF NOT EXISTS `tb_staff` (
   `staff_id` int(11) NOT NULL,
-  `staff_name` varchar(50) NOT NULL,
-  `staff_jeniskelamin` varchar(50) NOT NULL,
-  `staff_jurusan` varchar(225) NOT NULL,
-  `staff_hp` varchar(30) NOT NULL,
+  `staff_name` varchar(13) CHARACTER SET latin1 NOT NULL,
+  `staff_jeniskelamin` varchar(13) CHARACTER SET latin1 NOT NULL,
+  `staff_jurusan` varchar(13) CHARACTER SET latin1 NOT NULL,
+  `staff_hp` varchar(13) CHARACTER SET latin1 NOT NULL,
   `staff_alamat` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `tb_staff`
---
+-- Pengeluaran data tidak dipilih.
 
-INSERT INTO `tb_staff` (`staff_id`, `staff_name`, `staff_jeniskelamin`, `staff_jurusan`, `staff_hp`, `staff_alamat`) VALUES
-(1, 'Ahamd Qomarudin', 'Laki-laki','Teknologi Informasi','082330882347', 'Singosarri Malang');
-COMMIT;
-
+/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
