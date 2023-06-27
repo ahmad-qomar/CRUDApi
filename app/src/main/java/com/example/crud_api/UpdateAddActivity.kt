@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.crud_api.R
 import kotlinx.android.synthetic.main.activity_update_add.*
+
 @Suppress("SENSELESS_COMPARISON")
 class UpdateAddActivity : AppCompatActivity(), CrudView {
     private lateinit var presenter: Presenter2
@@ -19,6 +20,8 @@ class UpdateAddActivity : AppCompatActivity(), CrudView {
             btnAction.setOnClickListener() {
                 presenter.addData(
                     etName.text.toString(),
+                    etJeniskelamin.text.toString(),
+                    etJurusan.text.toString(),
                     etPhone.text.toString(),
                     etAlamat.text.toString())
             }
@@ -26,14 +29,19 @@ class UpdateAddActivity : AppCompatActivity(), CrudView {
             btnAction.text = "Update"
             val item = itemDataItem as DataItem?
             etName.setText(item?.staffName.toString())
+            etJeniskelamin.setText(item?.staffJeniskelamin.toString())
+            etJurusan.setText(item?.staffJurusan.toString())
             etPhone.setText(item?.staffHp.toString())
             etAlamat.setText(item?.staffAlamat.toString())
             btnAction.setOnClickListener() {
                 presenter.updateData(
                     item?.staffId ?: "",
                     etName.text.toString(),
+                    etJeniskelamin.text.toString(),
+                    etJurusan.text.toString(),
                     etPhone.text.toString(),
-                    etAlamat.text.toString())
+                    etAlamat.text.toString()
+                )
                 finish()
             }
         }

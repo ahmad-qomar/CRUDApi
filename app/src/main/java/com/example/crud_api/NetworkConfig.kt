@@ -18,9 +18,18 @@ object NetworkConfig {
         return okHttpClient
     }
     //Retrofit
+//    fun getRetrofit(): Retrofit {
+//        return Retrofit.Builder()
+//            .baseUrl("http://192.168.12.242/server_api/index.php/ServerApi/addStaff/")
+//            .client(getInterceptor())
+//            .addConverterFactory(GsonConverterFactory.create())
+//            .build()
+//    }
+//    fun getService() = getRetrofit().create(StaffService::class.java)
+
     fun getRetrofit(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("http://192.168.12.242:82/server_api/index.php/ServerApi/addStaff/")
+            .baseUrl("http://192.168.12.242/server_api/index.php/ServerApi/addStaff/")
             .client(getInterceptor())
             .addConverterFactory(GsonConverterFactory.create())
             .build()
@@ -32,8 +41,11 @@ interface StaffService{
     @FormUrlEncoded
     @POST("addStaff")
     fun addStaff(@Field("name") name : String,
+                 @Field("hp") jeniskelamin: String,
+                 @Field("hp") jurusan: String,
                  @Field("hp") hp : String,
                  @Field("alamat") alamat : String) : Call<ResultStatus>
+
     //Fungsi Get Data
     @GET("getDataStaff")
     fun getData() : Call<ResultStaff>
@@ -46,6 +58,8 @@ interface StaffService{
     @POST("updateStaff")
     fun updateStaff(@Field("id") id: String,
                     @Field("name") name: String,
+                    @Field("name") jeniskelamin: String,
+                    @Field("name") jurusan: String,
                     @Field("hp") hp : String,
                     @Field("alamat") alamat : String) : Call<ResultStatus>
 }

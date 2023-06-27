@@ -1,10 +1,9 @@
 package com.samsul.tesapi
-import android.util.Log
 import retrofit2.Call
 import retrofit2.Response
 class Presenter2 (val crudView: UpdateAddActivity) {
     //Add data
-    fun addData(name : String, hp : String, alamat : String){
+    fun addData(name : String, jeniskelamin : String, jurusan : String, hp : String, alamat : String){
         NetworkConfig.getService()
             .addStaff(name, hp, alamat)
             .enqueue(object : retrofit2.Callback<ResultStatus>{
@@ -21,9 +20,9 @@ class Presenter2 (val crudView: UpdateAddActivity) {
             })
     }
     //Update Data
-    fun updateData(id: String, name: String, hp: String, alamat: String){
+    fun updateData(id: String, name: String,  jeniskelamin : String, jurusan: String, hp: String, alamat: String){
         NetworkConfig.getService()
-            .updateStaff(id, name, hp, alamat)
+            .updateStaff(id, name, jeniskelamin, jurusan, hp, alamat)
             .enqueue(object : retrofit2.Callback<ResultStatus>{
                 override fun onFailure(call: Call<ResultStatus>, t: Throwable) {
                     crudView.onErrorUpdate(t.localizedMessage)

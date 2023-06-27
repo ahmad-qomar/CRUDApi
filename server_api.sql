@@ -29,8 +29,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tb_staff` (
   `staff_id` int(11) NOT NULL,
-  `staff_name` varchar(13) NOT NULL,
-  `staff_hp` varchar(13) NOT NULL,
+  `staff_name` varchar(50) NOT NULL,
+  `staff_jeniskelamin` varchar(50) NOT NULL,
+  `staff_jurusan` varchar(225) NOT NULL,
+  `staff_hp` varchar(30) NOT NULL,
   `staff_alamat` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -38,8 +40,8 @@ CREATE TABLE `tb_staff` (
 -- Dumping data untuk tabel `tb_staff`
 --
 
-INSERT INTO `tb_staff` (`staff_id`, `staff_name`, `staff_hp`, `staff_alamat`) VALUES
-(0, 'qomar', '082330882347', 'malang');
+INSERT INTO `tb_staff` (`staff_id`, `staff_name`, `staff_jeniskelamin`, `staff_jurusan`, `staff_hp`, `staff_alamat`) VALUES
+(1, 'Ahamd Qomarudin', 'Laki-laki','Teknologi Informasi','082330882347', 'Singosarri Malang');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

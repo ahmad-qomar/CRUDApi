@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.example.crud_api.R
 import kotlinx.android.synthetic.main.activity_main.*
+
 class MainActivity : AppCompatActivity(), CrudView {
     private lateinit var presenter: Presenter
     override fun onCreate(savedInstanceState: Bundle?) {

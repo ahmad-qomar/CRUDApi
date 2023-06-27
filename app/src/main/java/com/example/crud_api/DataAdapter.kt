@@ -5,7 +5,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.crud_api.R
 import kotlinx.android.synthetic.main.item_data.view.*
-class DataAdapter(val data: List<DataItem>? , private val click: onClickItem) :
+
+
+class DataAdapter(val data: List<DataItem>?, private val click: onClickItem) :
     RecyclerView.Adapter<DataAdapter.MyHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_data,parent,false)
@@ -23,6 +25,8 @@ class DataAdapter(val data: List<DataItem>? , private val click: onClickItem) :
     }
     class MyHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun onBind(get: DataItem?) {
+            itemView.tvName.text = get?.staffName
+            itemView.tvJeniskelamin.text = get?.staffJeniskelamin
             itemView.tvName.text = get?.staffName
             itemView.tvPhone.text = get?.staffHp
             itemView.tvAddress.text = get?.staffAlamat
