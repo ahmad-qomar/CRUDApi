@@ -1,9 +1,6 @@
 package com.samsul.tesapi
 interface CrudView {
 
-    abstract val etJurusan: Any
-    abstract val etJeniskelamin: Any
-
     //Untuk get data
     fun onSuccessGet(data: List<DataItem>?)
     fun onFailedGet(msg : String)

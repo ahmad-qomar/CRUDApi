@@ -5,7 +5,7 @@ class Presenter2 (val crudView: UpdateAddActivity) {
     //Add data
     fun addData(name : String, jeniskelamin : String, jurusan : String, hp : String, alamat : String){
         NetworkConfig.getService()
-            .addStaff(name, hp, alamat)
+            .addStaff(name, jeniskelamin, jurusan, hp, alamat)
             .enqueue(object : retrofit2.Callback<ResultStatus>{
                 override fun onFailure(call: Call<ResultStatus>, t: Throwable) {
                     crudView.errorAdd(t.localizedMessage)

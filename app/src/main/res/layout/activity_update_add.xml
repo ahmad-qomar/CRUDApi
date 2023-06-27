@@ -15,6 +15,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <EditText
+        android:id="@+id/etJeniskelamin"
+        android:hint="Jeniskelamin"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/etJurusan"
+        android:hint="Jurusan"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
         android:id="@+id/etPhone"
         android:hint="Phone"
         android:layout_marginBottom="10dp"

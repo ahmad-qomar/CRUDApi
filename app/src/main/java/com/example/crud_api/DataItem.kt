@@ -3,15 +3,14 @@ import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 class DataItem : Serializable{
 
-    val staffJeniskelamin: Any
-    val staffJurusan: Any
-
     @field:SerializedName("staff_id")
     val staffId: String? = null
     @field:SerializedName("staff_name")
-    @field:SerializedName("staff_jeniskelamin)
-    @field:SerializedName("staff_name")
     val staffName: String? = null
+    @field:SerializedName("staff_jeniskelamin")
+    val staffJeniskelamin: String? = null
+    @field:SerializedName("staff_Jurusan")
+    val staffJurusan: String? = null
     @field:SerializedName("staff_hp")
     val staffHp: String? = null
     @field:SerializedName("staff_alamat")

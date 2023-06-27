@@ -27,7 +27,7 @@ class DataAdapter(val data: List<DataItem>?, private val click: onClickItem) :
         fun onBind(get: DataItem?) {
             itemView.tvName.text = get?.staffName
             itemView.tvJeniskelamin.text = get?.staffJeniskelamin
-            itemView.tvName.text = get?.staffName
+            itemView.tvJurusan.text = get?.staffJurusan
             itemView.tvPhone.text = get?.staffHp
             itemView.tvAddress.text = get?.staffAlamat
         }
